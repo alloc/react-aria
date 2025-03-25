@@ -261,7 +261,7 @@ export function useColorWheel(props: AriaColorWheelOptions, state: ColorWheelSta
   let {minValue, maxValue, step} = state.value.getChannelRange('hue');
 
   let forcedColorAdjustNoneStyle = {
-    forcedColorAdjust: 'none'
+    forcedColorAdjust: 'none' as const
   };
 
   let {visuallyHiddenProps} = useVisuallyHidden({

@@ -104,7 +104,7 @@ export function useColorSlider(props: AriaColorSliderOptions, state: ColorSlider
     }
   };
 
-  let forcedColorAdjustNoneStyle = {forcedColorAdjust: 'none'};
+  let forcedColorAdjustNoneStyle = {forcedColorAdjust: 'none' as const};
 
   if (channel === 'hue') {
     inputProps['aria-valuetext'] += `, ${value.getHueName(locale)}`;

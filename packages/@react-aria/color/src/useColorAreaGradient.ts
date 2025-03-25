@@ -47,7 +47,7 @@ interface ColorAreaGradientProps {
 }
 
 export function useColorAreaGradient({direction, state, zChannel, xChannel, yChannel}: ColorAreaGradientProps): Gradients {
-  let returnVal = useMemo<Gradients>(() => {
+  let returnVal = useMemo((): Gradients => {
     let end = direction === 'rtl' ? 'left' : 'right';
     let colorAreaStyles = {};
     let zValue = state.value.getChannelValue(zChannel);
@@ -110,7 +110,7 @@ export function useColorAreaGradient({direction, state, zChannel, xChannel, yCha
       x = 1 - x;
     }
 
-    let forcedColorAdjustNoneStyle = {forcedColorAdjust: 'none'};
+    let forcedColorAdjustNoneStyle = {forcedColorAdjust: 'none' as const};
 
     return {
       colorAreaStyleProps: {
