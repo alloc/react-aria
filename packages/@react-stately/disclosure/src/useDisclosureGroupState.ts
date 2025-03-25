@@ -59,7 +59,7 @@ export function useDisclosureGroupState(props: DisclosureGroupProps): Disclosure
   useEffect(() => {
     // Ensure only one item is expanded if allowsMultipleExpanded is false.
     if (!allowsMultipleExpanded && expandedKeys.size > 1) {
-      setExpandedKeys(new Set([expandedKeys.values().next().value]));
+      setExpandedKeys(new Set([expandedKeys.values().next().value!]));
     }
   });
 
