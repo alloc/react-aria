@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@internationalized/date": "workspace:",
+    "@internationalized/string": "workspace:",
     "@react-aria/i18n": "workspace:",
     "@react-aria/interactions": "workspace:",
     "@react-aria/live-announcer": "workspace:",
