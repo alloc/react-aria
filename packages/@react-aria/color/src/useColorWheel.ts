@@ -215,17 +215,18 @@ export function useColorWheel(props: AriaColorWheelOptions, state: ColorWheelSta
           return;
         }
         onTrackDown(e.currentTarget, e.pointerId, e.clientX, e.clientY);
-      }} : {
-        onMouseDown: (e: React.MouseEvent) => {
-          if (e.button !== 0 || e.altKey || e.ctrlKey || e.metaKey) {
-            return;
-          }
-          onTrackDown(e.currentTarget, undefined, e.clientX, e.clientY);
-        },
-        onTouchStart: (e: React.TouchEvent) => {
-          onTrackDown(e.currentTarget, e.changedTouches[0].identifier, e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+      }
+    } : {
+      onMouseDown: (e: React.MouseEvent) => {
+        if (e.button !== 0 || e.altKey || e.ctrlKey || e.metaKey) {
+          return;
         }
-      })
+        onTrackDown(e.currentTarget, undefined, e.clientX, e.clientY);
+      },
+      onTouchStart: (e: React.TouchEvent) => {
+        onTrackDown(e.currentTarget, e.changedTouches[0].identifier, e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+      }
+    })
   }, movePropsContainer);
 
   let thumbInteractions = isDisabled ? {} : mergeProps({
