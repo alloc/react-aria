@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "bin": {
+    "react-aria-build": "index.ts"
+  }
+}

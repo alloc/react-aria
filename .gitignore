@@ -1,0 +1,6 @@
+.cache
+node_modules
+dist
+packages/**/tsconfig.json
+packages/**/rolldown.config.mjs
+rolldown.config.*.mjs

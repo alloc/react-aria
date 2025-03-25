@@ -1,0 +1,81 @@
+{
+  "name": "react-aria-components",
+  "version": "1.7.1",
+  "description": "A library of styleable components built using React Aria",
+  "license": "Apache-2.0",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
+  "source": "src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/import.mjs",
+      "require": "./dist/main.js"
+    },
+    "./i18n": {
+      "types": "./i18n/index.d.ts",
+      "import": "./i18n/index.mjs",
+      "require": "./i18n/index.js"
+    },
+    "./i18n/*": {
+      "types": "./i18n/lang.d.ts",
+      "import": "./i18n/*.mjs",
+      "require": "./i18n/*.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "i18n"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "build": "buildc -- react-aria-build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adobe/react-spectrum"
+  },
+  "dependencies": {
+    "@internationalized/date": "workspace:",
+    "@internationalized/string": "workspace:",
+    "@react-aria/autocomplete": "workspace:",
+    "@react-aria/collections": "workspace:",
+    "@react-aria/dnd": "workspace:",
+    "@react-aria/focus": "workspace:",
+    "@react-aria/interactions": "workspace:",
+    "@react-aria/live-announcer": "workspace:",
+    "@react-aria/ssr": "workspace:",
+    "@react-aria/toolbar": "workspace:",
+    "@react-aria/utils": "workspace:",
+    "@react-aria/virtualizer": "workspace:",
+    "@react-stately/autocomplete": "workspace:",
+    "@react-stately/layout": "workspace:",
+    "@react-stately/selection": "workspace:",
+    "@react-stately/table": "workspace:",
+    "@react-stately/utils": "workspace:",
+    "@react-stately/virtualizer": "workspace:",
+    "@react-types/form": "workspace:",
+    "@react-types/grid": "workspace:",
+    "@react-types/shared": "workspace:",
+    "@react-types/table": "workspace:",
+    "@swc/helpers": "^0.5.0",
+    "client-only": "^0.0.1",
+    "react-aria": "workspace:",
+    "react-stately": "workspace:",
+    "use-sync-external-store": "^1.4.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1",
+    "react-dom": "^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0"
+  }
+}

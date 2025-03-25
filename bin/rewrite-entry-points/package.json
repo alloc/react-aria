@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "bin": {
+    "rewrite-entry-points": "index.ts"
+  }
+}

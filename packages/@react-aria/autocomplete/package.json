@@ -1,0 +1,50 @@
+{
+  "name": "@react-aria/autocomplete",
+  "version": "3.0.0-beta.1",
+  "description": "Spectrum UI components in React",
+  "license": "Apache-2.0",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "exports": {
+    "types": "./dist/types.d.ts",
+    "import": "./dist/import.mjs",
+    "require": "./dist/main.js"
+  },
+  "types": "dist/types.d.ts",
+  "source": "src/index.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "buildc -- react-aria-build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adobe/react-spectrum"
+  },
+  "dependencies": {
+    "@react-aria/combobox": "workspace:",
+    "@react-aria/focus": "workspace:",
+    "@react-aria/i18n": "workspace:",
+    "@react-aria/interactions": "workspace:",
+    "@react-aria/listbox": "workspace:",
+    "@react-aria/searchfield": "workspace:",
+    "@react-aria/textfield": "workspace:",
+    "@react-aria/utils": "workspace:",
+    "@react-stately/autocomplete": "workspace:",
+    "@react-stately/combobox": "workspace:",
+    "@react-types/autocomplete": "workspace:",
+    "@react-types/button": "workspace:",
+    "@react-types/shared": "workspace:",
+    "@swc/helpers": "^0.5.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1",
+    "react-dom": "^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

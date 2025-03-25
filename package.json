@@ -1,0 +1,29 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@aklinker1/buildc": "^1.1.4",
+    "@aleclarson/watchlist": "^0.3.5",
+    "@alloc/prettier-config": "^1.0.0",
+    "@react-types/shared": "workspace:",
+    "@types/node": "^22.13.13",
+    "@types/process": "link:types/process",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "prettier": "^3.5.3",
+    "react": "^19.0.0",
+    "react-aria-build": "link:bin/react-aria-build",
+    "react-dom": "^19.0.0",
+    "rewrite-entry-points": "link:bin/rewrite-entry-points",
+    "rimraf": "^6.0.1",
+    "rolldown": "1.0.0-beta.7",
+    "tinyglobby": "^0.2.12",
+    "tinyspawn": "^1.4.0",
+    "typescript": "^5.8.2"
+  },
+  "prettier": "@alloc/prettier-config",
+  "scripts": {
+    "clean": "rimraf .cache",
+    "build": "pnpm -C packages/react-aria-components build",
+    "dev": "watchlist packages !**/dist -- pnpm build"
+  }
+}

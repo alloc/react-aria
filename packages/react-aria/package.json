@@ -1,0 +1,94 @@
+{
+  "name": "react-aria",
+  "version": "3.38.1",
+  "description": "Spectrum UI components in React",
+  "license": "Apache-2.0",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/import.mjs",
+      "require": "./dist/main.js"
+    },
+    "./i18n": {
+      "types": "./i18n/index.d.ts",
+      "import": "./i18n/index.mjs",
+      "require": "./i18n/index.js"
+    },
+    "./i18n/*": {
+      "types": "./i18n/lang.d.ts",
+      "import": "./i18n/*.mjs",
+      "require": "./i18n/*.js"
+    }
+  },
+  "types": "dist/types.d.ts",
+  "source": "src/index.ts",
+  "files": [
+    "dist",
+    "i18n"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "buildc -- react-aria-build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adobe/react-spectrum"
+  },
+  "dependencies": {
+    "@internationalized/string": "workspace:",
+    "@react-aria/breadcrumbs": "workspace:",
+    "@react-aria/button": "workspace:",
+    "@react-aria/calendar": "workspace:",
+    "@react-aria/checkbox": "workspace:",
+    "@react-aria/color": "workspace:",
+    "@react-aria/combobox": "workspace:",
+    "@react-aria/datepicker": "workspace:",
+    "@react-aria/dialog": "workspace:",
+    "@react-aria/disclosure": "workspace:",
+    "@react-aria/dnd": "workspace:",
+    "@react-aria/focus": "workspace:",
+    "@react-aria/gridlist": "workspace:",
+    "@react-aria/i18n": "workspace:",
+    "@react-aria/interactions": "workspace:",
+    "@react-aria/label": "workspace:",
+    "@react-aria/landmark": "workspace:",
+    "@react-aria/link": "workspace:",
+    "@react-aria/listbox": "workspace:",
+    "@react-aria/menu": "workspace:",
+    "@react-aria/meter": "workspace:",
+    "@react-aria/numberfield": "workspace:",
+    "@react-aria/overlays": "workspace:",
+    "@react-aria/progress": "workspace:",
+    "@react-aria/radio": "workspace:",
+    "@react-aria/searchfield": "workspace:",
+    "@react-aria/select": "workspace:",
+    "@react-aria/selection": "workspace:",
+    "@react-aria/separator": "workspace:",
+    "@react-aria/slider": "workspace:",
+    "@react-aria/ssr": "workspace:",
+    "@react-aria/switch": "workspace:",
+    "@react-aria/table": "workspace:",
+    "@react-aria/tabs": "workspace:",
+    "@react-aria/tag": "workspace:",
+    "@react-aria/textfield": "workspace:",
+    "@react-aria/toast": "workspace:",
+    "@react-aria/tooltip": "workspace:",
+    "@react-aria/tree": "workspace:",
+    "@react-aria/utils": "workspace:",
+    "@react-aria/visually-hidden": "workspace:",
+    "@react-types/shared": "workspace:"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1",
+    "react-dom": "^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

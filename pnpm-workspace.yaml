@@ -1,0 +1,7 @@
+packages:
+  - '.'
+  - 'packages/*'
+  - 'packages/@internationalized/*'
+  - 'packages/@react-aria/*'
+  - 'packages/@react-stately/*'
+  - 'packages/@react-types/*'

@@ -1,0 +1,64 @@
+{
+  "name": "react-stately",
+  "version": "3.36.1",
+  "description": "Spectrum UI components in React",
+  "license": "Apache-2.0",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "exports": {
+    "types": "./dist/types.d.ts",
+    "import": "./dist/import.mjs",
+    "require": "./dist/main.js"
+  },
+  "types": "dist/types.d.ts",
+  "source": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "buildc -- react-aria-build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adobe/react-spectrum"
+  },
+  "dependencies": {
+    "@react-stately/calendar": "workspace:",
+    "@react-stately/checkbox": "workspace:",
+    "@react-stately/collections": "workspace:",
+    "@react-stately/color": "workspace:",
+    "@react-stately/combobox": "workspace:",
+    "@react-stately/data": "workspace:",
+    "@react-stately/datepicker": "workspace:",
+    "@react-stately/disclosure": "workspace:",
+    "@react-stately/dnd": "workspace:",
+    "@react-stately/form": "workspace:",
+    "@react-stately/list": "workspace:",
+    "@react-stately/menu": "workspace:",
+    "@react-stately/numberfield": "workspace:",
+    "@react-stately/overlays": "workspace:",
+    "@react-stately/radio": "workspace:",
+    "@react-stately/searchfield": "workspace:",
+    "@react-stately/select": "workspace:",
+    "@react-stately/selection": "workspace:",
+    "@react-stately/slider": "workspace:",
+    "@react-stately/table": "workspace:",
+    "@react-stately/tabs": "workspace:",
+    "@react-stately/toast": "workspace:",
+    "@react-stately/toggle": "workspace:",
+    "@react-stately/tooltip": "workspace:",
+    "@react-stately/tree": "workspace:",
+    "@react-types/shared": "workspace:"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

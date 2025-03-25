@@ -1,0 +1,16 @@
+{
+  "include": ["config", "bin"],
+  "compilerOptions": {
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "esnext",
+    "lib": ["esnext"],
+    "noEmit": true,
+    "checkJs": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "types": ["node"]
+  }
+}
