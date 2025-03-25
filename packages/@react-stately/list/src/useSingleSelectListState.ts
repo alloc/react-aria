@@ -56,7 +56,7 @@ export function useSingleSelectListState<T extends object>(props: SingleSelectLi
       // Always fire onSelectionChange, even if the key is the same
       // as the current key (useControlledState does not).
       if (key === selectedKey && props.onSelectionChange) {
-        props.onSelectionChange(key);
+        props.onSelectionChange(key!);
       }
 
       setSelectedKey(key);
