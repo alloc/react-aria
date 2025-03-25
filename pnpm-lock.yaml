@@ -254,6 +254,9 @@ importers:
       '@internationalized/date':
         specifier: 'workspace:'
         version: link:../../@internationalized/date
+      '@internationalized/string':
+        specifier: 'workspace:'
+        version: link:../../@internationalized/string
       '@react-aria/i18n':
         specifier: 'workspace:'
         version: link:../i18n
