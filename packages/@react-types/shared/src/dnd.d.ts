@@ -208,19 +208,19 @@ export interface DroppableCollectionUtilityOptions {
   /**
    * Handler that is called when external items are dropped "between" items.
    */
-  onInsert?: (e: DroppableCollectionInsertDropEvent) => void,
+  onInsert?: (e: DroppableCollectionInsertDropEvent) => PromiseLike<void> | void,
   /**
    * Handler that is called when external items are dropped on the droppable collection's root.
    */
-  onRootDrop?: (e: DroppableCollectionRootDropEvent) => void,
+  onRootDrop?: (e: DroppableCollectionRootDropEvent) => PromiseLike<void> | void,
   /**
    * Handler that is called when items are dropped "on" an item.
    */
-  onItemDrop?: (e: DroppableCollectionOnItemDropEvent) => void,
+  onItemDrop?: (e: DroppableCollectionOnItemDropEvent) => PromiseLike<void> | void,
   /**
    * Handler that is called when items are reordered via drag in the source collection.
    */
-  onReorder?: (e: DroppableCollectionReorderEvent) => void,
+  onReorder?: (e: DroppableCollectionReorderEvent) => PromiseLike<void> | void,
   /**
    * A function returning whether a given target in the droppable collection is a valid "on" drop target for the current drag types.
    */
