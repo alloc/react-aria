@@ -3,35 +3,13 @@
   "version": "1.7.1",
   "description": "A library of styleable components built using React Aria",
   "license": "Apache-2.0",
-  "main": "dist/main.js",
-  "module": "dist/module.js",
-  "types": "dist/types.d.ts",
   "source": "src/index.ts",
   "exports": {
-    ".": {
-      "types": "./dist/types.d.ts",
-      "import": "./dist/import.mjs",
-      "require": "./dist/main.js"
-    },
-    "./i18n": {
-      "types": "./i18n/index.d.ts",
-      "import": "./i18n/index.mjs",
-      "require": "./i18n/index.js"
-    },
-    "./i18n/*": {
-      "types": "./i18n/lang.d.ts",
-      "import": "./i18n/*.mjs",
-      "require": "./i18n/*.js"
-    }
+    "types": "./dist/types/index.d.ts",
+    "import": "./dist/index.js"
   },
-  "files": [
-    "dist",
-    "src",
-    "i18n"
-  ],
-  "sideEffects": [
-    "*.css"
-  ],
+  "files": ["dist", "src", "i18n"],
+  "sideEffects": ["*.css"],
   "scripts": {
     "build": "buildc -- react-aria-build"
   },

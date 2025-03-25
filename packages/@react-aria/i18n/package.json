@@ -3,22 +3,12 @@
   "version": "3.12.7",
   "description": "Spectrum UI components in React",
   "license": "Apache-2.0",
-  "main": "dist/main.js",
-  "module": "dist/module.js",
   "exports": {
-    ".": {
-      "types": "./dist/types.d.ts",
-      "import": "./dist/import.mjs",
-      "require": "./dist/main.js"
-    },
-    "./server": {
-      "import": "./server/index.mjs",
-      "require": "./server/index.js"
-    }
+    "types": "./dist/types/index.d.ts",
+    "import": "./dist/index.js"
   },
   "server-module": "server/index.mjs",
   "server-main": "server/index.js",
-  "types": "dist/types.d.ts",
   "source": "src/index.ts",
   "targets": {
     "main": {},
@@ -36,11 +26,7 @@
       "includeNodeModules": false
     }
   },
-  "files": [
-    "dist",
-    "src",
-    "server"
-  ],
+  "files": ["dist", "src", "server"],
   "sideEffects": false,
   "scripts": {
     "build": "buildc -- react-aria-build"
