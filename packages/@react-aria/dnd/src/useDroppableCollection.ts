@@ -258,12 +258,12 @@ export function useDroppableCollection(props: DroppableCollectionOptions, state:
         // inserted item. If selection is disabled, then also show the focus ring so there
         // is some indication that items were added.
         if (state.selectionManager.focusedKey === prevFocusedKey) {
-          let first = newKeys.keys().next().value;
+          let first = newKeys.keys().next().value!;
           let item = state.collection.getItem(first);
 
           // If this is a cell, focus the parent row.
           if (item?.type === 'cell') {
-            first = item.parentKey;
+            first = item.parentKey!;
           }
 
           state.selectionManager.setFocusedKey(first);
