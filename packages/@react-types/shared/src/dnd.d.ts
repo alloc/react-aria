@@ -154,7 +154,7 @@ export interface DroppableCollectionInsertDropEvent {
   items: DropItem[],
   /** The drop operation that should occur. */
   dropOperation: DropOperation,
-   /** The drop target. */
+  /** The drop target. */
   target: ItemDropTarget
 }
 
