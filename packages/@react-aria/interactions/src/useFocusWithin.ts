@@ -15,31 +15,31 @@
 // NOTICE file in the root directory of this source tree.
 // See https://github.com/facebook/react/tree/cc7c1aece46a6b69b41958d731e0fd27c94bfc6c/packages/react-interactions
 
-import {DOMAttributes} from '@react-types/shared';
+import {DOMAttributes, FocusableElement} from '@react-types/shared';
 import {FocusEvent, useCallback, useRef} from 'react';
 import {getActiveElement, getEventTarget, getOwnerDocument, nodeContains, useGlobalListeners} from '@react-aria/utils';
 import {SyntheticFocusEvent, useSyntheticBlurEvent} from './utils';
 
-export interface FocusWithinProps {
+export interface FocusWithinProps<Target extends FocusableElement = FocusableElement> {
   /** Whether the focus within events should be disabled. */
   isDisabled?: boolean,
   /** Handler that is called when the target element or a descendant receives focus. */
-  onFocusWithin?: (e: FocusEvent) => void,
+  onFocusWithin?: (e: FocusEvent<Target>) => void,
   /** Handler that is called when the target element and all descendants lose focus. */
-  onBlurWithin?: (e: FocusEvent) => void,
+  onBlurWithin?: (e: FocusEvent<Target>) => void,
   /** Handler that is called when the the focus within state changes. */
   onFocusWithinChange?: (isFocusWithin: boolean) => void
 }
 
-export interface FocusWithinResult {
+export interface FocusWithinResult<Target extends FocusableElement = FocusableElement> {
   /** Props to spread onto the target element. */
-  focusWithinProps: DOMAttributes
+  focusWithinProps: DOMAttributes<Target>
 }
 
 /**
  * Handles focus events for the target and its descendants.
  */
-export function useFocusWithin(props: FocusWithinProps): FocusWithinResult {
+export function useFocusWithin<Target extends FocusableElement = FocusableElement>(props: FocusWithinProps<Target>): FocusWithinResult<Target> {
   let {
     isDisabled,
     onBlurWithin,
@@ -52,7 +52,7 @@ export function useFocusWithin(props: FocusWithinProps): FocusWithinResult {
 
   let {addGlobalListener, removeAllGlobalListeners} = useGlobalListeners();
 
-  let onBlur = useCallback((e: FocusEvent) => {
+  let onBlur = useCallback((e: FocusEvent<Target>) => {
     // Ignore events bubbling through portals.
     if (!e.currentTarget.contains(e.target)) {
       return;
@@ -76,7 +76,7 @@ export function useFocusWithin(props: FocusWithinProps): FocusWithinResult {
   }, [onBlurWithin, onFocusWithinChange, state, removeAllGlobalListeners]);
 
   let onSyntheticFocus = useSyntheticBlurEvent(onBlur);
-  let onFocus = useCallback((e: FocusEvent) => {
+  let onFocus = useCallback((e: FocusEvent<Target>) => {
     // Ignore events bubbling through portals.
     if (!e.currentTarget.contains(e.target)) {
       return;
@@ -104,7 +104,7 @@ export function useFocusWithin(props: FocusWithinProps): FocusWithinResult {
       let currentTarget = e.currentTarget;
       addGlobalListener(ownerDocument, 'focus', e => {
         if (state.current.isFocusWithin && !nodeContains(currentTarget, e.target as Element)) {
-          let event = new SyntheticFocusEvent('blur', new ownerDocument.defaultView!.FocusEvent('blur', {relatedTarget: e.target}));
+          let event = new SyntheticFocusEvent<Target>('blur', new ownerDocument.defaultView!.FocusEvent('blur', {relatedTarget: e.target}));
           event.target = currentTarget;
           event.currentTarget = currentTarget;
           onBlur(event);
