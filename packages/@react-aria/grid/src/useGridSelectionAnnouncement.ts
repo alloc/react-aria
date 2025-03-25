@@ -61,20 +61,20 @@ export function useGridSelectionAnnouncement<T>(props: GridSelectionAnnouncement
     let messages: string[] = [];
 
     if ((state.selectionManager.selectedKeys.size === 1 && isReplace)) {
-      if (state.collection.getItem(state.selectionManager.selectedKeys.keys().next().value)) {
-        let currentSelectionText = getRowText(state.selectionManager.selectedKeys.keys().next().value);
+      if (state.collection.getItem(state.selectionManager.selectedKeys.keys().next().value!)) {
+        let currentSelectionText = getRowText(state.selectionManager.selectedKeys.keys().next().value!);
         if (currentSelectionText) {
           messages.push(stringFormatter.format('selectedItem', {item: currentSelectionText}));
         }
       }
     } else if (addedKeys.size === 1 && removedKeys.size === 0) {
-      let addedText = getRowText(addedKeys.keys().next().value);
+      let addedText = getRowText(addedKeys.keys().next().value!);
       if (addedText) {
         messages.push(stringFormatter.format('selectedItem', {item: addedText}));
       }
     } else if (removedKeys.size === 1 && addedKeys.size === 0) {
-      if (state.collection.getItem(removedKeys.keys().next().value)) {
-        let removedText = getRowText(removedKeys.keys().next().value);
+      if (state.collection.getItem(removedKeys.keys().next().value!)) {
+        let removedText = getRowText(removedKeys.keys().next().value!);
         if (removedText) {
           messages.push(stringFormatter.format('deselectedItem', {item: removedText}));
         }
